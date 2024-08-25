@@ -52,10 +52,10 @@ CONFIG_LRNG_CPU=y
 # CONFIG_LRNG_SCHED is not set
 ' >>./target/linux/generic/config-5.15
 # SSL
-#rm -rf ./package/libs/mbedtls
-#cp -rf ../immortalwrt/package/libs/mbedtls ./package/libs/mbedtls
-#rm -rf ./package/libs/openssl
-#cp -rf ../immortalwrt_21/package/libs/openssl ./package/libs/openssl
+rm -rf ./package/libs/mbedtls
+cp -rf ../immortalwrt/package/libs/mbedtls ./package/libs/mbedtls
+rm -rf ./package/libs/openssl
+cp -rf ../immortalwrt_21/package/libs/openssl ./package/libs/openssl
 # fstool
 wget -qO - https://github.com/coolsnowwolf/lede/commit/8a4db76.patch | patch -p1
 # wg
@@ -160,7 +160,7 @@ cp -rf ../immortalwrt_23/package/utils/mhz ./package/utils/mhz
 # luci-app-ap-modem
 #cp -rf ../linkease/applications/luci-app-ap-modem ./package/new/luci-app-ap-modem
 # luci-app-irqbalance
-cp -rf ../OpenWrt-Add/luci-app-irqbalance ./package/new/luci-app-irqbalance
+#cp -rf ../OpenWrt-Add/luci-app-irqbalance ./package/new/luci-app-irqbalance
 # 更换 Nodejs 版本
 rm -rf ./feeds/packages/lang/node
 git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt feeds/packages/lang/node
@@ -329,12 +329,12 @@ cn.ntp.org.cn
 ntp.ntsc.ac.cn
 ' >>./package/new/luci-app-passwall/root/usr/share/passwall/rules/direct_host
 # qBittorrent 下载
-cp -rf ../lede_luci/applications/luci-app-qbittorrent ./package/new/luci-app-qbittorrent
-cp -rf ../lede_pkg/net/qBittorrent-static ./package/new/qBittorrent-static
-cp -rf ../lede_pkg/net/qBittorrent ./package/new/qBittorrent
-cp -rf ../lede_pkg/libs/qtbase ./package/new/qtbase
-cp -rf ../lede_pkg/libs/qttools ./package/new/qttools
-cp -rf ../lede_pkg/libs/rblibtorrent ./package/new/rblibtorrent
+#cp -rf ../lede_luci/applications/luci-app-qbittorrent ./package/new/luci-app-qbittorrent
+#cp -rf ../lede_pkg/net/qBittorrent-static ./package/new/qBittorrent-static
+#cp -rf ../lede_pkg/net/qBittorrent ./package/new/qBittorrent
+#cp -rf ../lede_pkg/libs/qtbase ./package/new/qtbase
+#cp -rf ../lede_pkg/libs/qttools ./package/new/qttools
+#cp -rf ../lede_pkg/libs/rblibtorrent ./package/new/rblibtorrent
 # 清理内存
 cp -rf ../lede_luci/applications/luci-app-ramfree ./package/new/luci-app-ramfree
 # ServerChan 微信推送
@@ -386,21 +386,21 @@ wget -qO - https://github.com/Lienol/openwrt-package/pull/39.patch | patch -p1
 popd
 sed -i '/socat\.config/d' feeds/packages/net/socat/Makefile
 # natmap
-git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/muink/luci-app-natmapt.git package/luci-app-natmapt
-pushd package/luci-app-natmapt
-umask 022
-git checkout
-popd
-git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/muink/openwrt-natmapt.git package/natmapt
-pushd package/natmapt
-umask 022
-git checkout
-popd
-git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/muink/openwrt-stuntman.git package/stuntman
-pushd package/stuntman
-umask 022
-git checkout
-popd
+#git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/muink/luci-app-natmapt.git package/luci-app-natmapt
+#pushd package/luci-app-natmapt
+#umask 022
+#git checkout
+#popd
+#git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/muink/openwrt-natmapt.git package/natmapt
+#pushd package/natmapt
+#umask 022
+#git checkout
+#popd
+#git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/muink/openwrt-stuntman.git package/stuntman
+#pushd package/stuntman
+#umask 022
+#git checkout
+#popd
 # 订阅转换
 cp -rf ../immortalwrt_pkg/net/subconverter ./feeds/packages/net/subconverter
 ln -sf ../../../feeds/packages/net/subconverter ./package/feeds/packages/subconverter
