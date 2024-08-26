@@ -224,14 +224,14 @@ ln -sf ../../../feeds/luci/applications/luci-app-autoreboot ./package/feeds/luci
 git clone -b luci --depth 1 https://github.com/QiuSimons/openwrt-chinadns-ng.git package/new/luci-app-chinadns-ng
 cp -rf ../passwall_pkg/chinadns-ng ./package/new/chinadns-ng
 # CPU 控制相关
-cp -rf ../OpenWrt-Add/luci-app-cpufreq ./feeds/luci/applications/luci-app-cpufreq
-ln -sf ../../../feeds/luci/applications/luci-app-cpufreq ./package/feeds/luci/luci-app-cpufreq
-sed -i 's,1608,1800,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
-sed -i 's,2016,2208,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
-sed -i 's,1512,1608,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
-cp -rf ../OpenWrt-Add/luci-app-cpulimit ./package/new/luci-app-cpulimit
-cp -rf ../immortalwrt_pkg/utils/cpulimit ./feeds/packages/utils/cpulimit
-ln -sf ../../../feeds/packages/utils/cpulimit ./package/feeds/packages/cpulimit
+#cp -rf ../OpenWrt-Add/luci-app-cpufreq ./feeds/luci/applications/luci-app-cpufreq
+#ln -sf ../../../feeds/luci/applications/luci-app-cpufreq ./package/feeds/luci/luci-app-cpufreq
+#sed -i 's,1608,1800,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
+#sed -i 's,2016,2208,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
+#sed -i 's,1512,1608,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
+#cp -rf ../OpenWrt-Add/luci-app-cpulimit ./package/new/luci-app-cpulimit
+#cp -rf ../immortalwrt_pkg/utils/cpulimit ./feeds/packages/utils/cpulimit
+#ln -sf ../../../feeds/packages/utils/cpulimit ./package/feeds/packages/cpulimit
 # 动态DNS
 sed -i '/boot()/,+2d' feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
 cp -rf ../openwrt-third/ddns-scripts_aliyun ./feeds/packages/net/ddns-scripts_aliyun
@@ -258,14 +258,14 @@ cp -rf ../OpenWrt-Add/luci-app-dnsproxy ./package/new/luci-app-dnsproxy
 # Edge 主题
 git clone -b master --depth 1 https://github.com/kiddin9/luci-theme-edge.git package/new/luci-theme-edge
 # FRP 内网穿透
-rm -rf ./feeds/luci/applications/luci-app-frps
-rm -rf ./feeds/luci/applications/luci-app-frpc
-rm -rf ./feeds/packages/net/frp
-cp -rf ../immortalwrt_pkg/net/frp ./feeds/packages/net/frp
-sed -i '/etc/d' feeds/packages/net/frp/Makefile
-sed -i '/defaults/{N;d;}' feeds/packages/net/frp/Makefile
-cp -rf ../lede_luci/applications/luci-app-frps ./package/new/luci-app-frps
-cp -rf ../lede_luci/applications/luci-app-frpc ./package/new/luci-app-frpc
+#rm -rf ./feeds/luci/applications/luci-app-frps
+#rm -rf ./feeds/luci/applications/luci-app-frpc
+#rm -rf ./feeds/packages/net/frp
+#cp -rf ../immortalwrt_pkg/net/frp ./feeds/packages/net/frp
+#sed -i '/etc/d' feeds/packages/net/frp/Makefile
+#sed -i '/defaults/{N;d;}' feeds/packages/net/frp/Makefile
+#cp -rf ../lede_luci/applications/luci-app-frps ./package/new/luci-app-frps
+#cp -rf ../lede_luci/applications/luci-app-frpc ./package/new/luci-app-frpc
 # IPSec
 #cp -rf ../lede_luci/applications/luci-app-ipsec-server ./package/new/luci-app-ipsec-server
 # IPv6 兼容助手
@@ -292,9 +292,9 @@ git clone --depth 1 https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk package
 # OLED 驱动程序
 git clone -b master --depth 1 https://github.com/NateLol/luci-app-oled.git package/new/luci-app-oled
 # homeproxy
-git clone --single-branch --depth 1 -b dev https://github.com/immortalwrt/homeproxy.git package/new/homeproxy
-rm -rf ./feeds/packages/net/sing-box
-cp -rf ../immortalwrt_pkg/net/sing-box ./feeds/packages/net/sing-box
+#git clone --single-branch --depth 1 -b dev https://github.com/immortalwrt/homeproxy.git package/new/homeproxy
+#rm -rf ./feeds/packages/net/sing-box
+#cp -rf ../immortalwrt_pkg/net/sing-box ./feeds/packages/net/sing-box
 # OpenClash
 git clone --single-branch --depth 1 -b master https://github.com/vernesong/OpenClash.git package/new/luci-app-openclash
 # Passwall
@@ -456,7 +456,7 @@ git clone -b master --depth 1 https://github.com/jerrykuku/lua-maxminddb.git pac
 #rm -rf ./feeds/packages/net/zerotier
 #cp -rf ../immortalwrt_pkg/net/zerotier ./feeds/packages/net/zerotier
 # watchcat
-echo > ./feeds/packages/utils/watchcat/files/watchcat.config
+#echo > ./feeds/packages/utils/watchcat/files/watchcat.config
 # sirpdboy
 mkdir -p package/sirpdboy
 cp -rf ../sirpdboy/luci-app-autotimeset ./package/sirpdboy/luci-app-autotimeset
